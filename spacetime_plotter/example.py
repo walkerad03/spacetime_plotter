@@ -1,11 +1,14 @@
-from plotter import spacetime_obj, plot_diagram
-import numpy as np
+from plotter import worldline as wl, event, \
+     plot_diagram
 
 objects = [
-    spacetime_obj('Object A', (0,0), 0.5, start=0, end=2),
-    spacetime_obj('Object B', (0,4), -0.5),
-    spacetime_obj('Object C', (0,2), -0.9, end=5)
+    wl('Train Back', (-1, 0), 0.5),
+    wl('Train Front', (1,0), 0.5),
+    wl('Stationary Observer', (0,0), 0),
+    wl('Train Observer', (0,0), 0.5),
+    event('Lightning Strike A',(-1,0),draw_lightline=True),
+    event('Lightning Strike B', (1,0),draw_lightline=True)
 ]
-lim = (-1, 10)
-
-plot_diagram(objects, lim)
+lim = (-5, 5)
+plot_diagram(objects,lim, title="Reference Frame of Stationary Observer",ref='Stationary Observer')
+plot_diagram(objects,lim, title="Reference Frame of Train Bound Observer",ref='Train Observer')
