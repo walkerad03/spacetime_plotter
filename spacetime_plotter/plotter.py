@@ -45,13 +45,10 @@ def plot_diagram(arr, limit, xlabel='x', ylabel='ct', title='Spacetime Graph', r
     ax.plot((limit[0],limit[1]), (0,0),color='Blue',linestyle='--', zorder=0)
     ax.plot((0,0),(limit[0],limit[1]),color='Blue',linestyle='--', zorder=0)
 
-
-    worldlines = ""
     for obj in arr:
         if obj.__class__.__name__ == 'worldline':
             if obj.label == ref:
                 ref_speed = obj.speed
-            
 
     for obj in arr:
         if obj.__class__.__name__ == 'worldline':
