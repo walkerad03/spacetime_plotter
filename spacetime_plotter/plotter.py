@@ -21,6 +21,7 @@ class event():
         self.draw_lightline = draw_lightline
 
 def _lorentz_transformation(point, v) -> tuple:
+    assert abs(v) <= 1, f"v must be between -1 and 1. Value of v: {v}"
     gamma: float = 1 / np.sqrt(1 - (v**2))
     x = gamma * ( point[1] - v * point[0] )
     t = gamma * ( point[0] - point[1] * v)
