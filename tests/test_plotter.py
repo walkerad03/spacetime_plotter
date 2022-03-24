@@ -1,4 +1,4 @@
-"""A File containing tests for the plotter module."""
+"""A module containing tests for the plotter module."""
 
 import pytest
 import spacetime_plotter.plotter as plt

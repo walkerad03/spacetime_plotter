@@ -1,3 +1,4 @@
+"""Setup file for spacetime_plotter package."""
 import setuptools
 
 with open('requirements.txt', 'r') as f:
